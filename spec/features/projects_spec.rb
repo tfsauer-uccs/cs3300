@@ -1,5 +1,7 @@
 require 'rails_helper'
-
+#this code tests all the features of the projects page.
+#it goes through each of the major functions, triggering with them with test fields
+#if each test completes successfully, return true
 RSpec.feature "Projects", type: :feature do
   context "Create new project" do
     before(:each) do

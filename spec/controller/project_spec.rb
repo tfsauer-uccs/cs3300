@@ -9,6 +9,7 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 
+  #checks to see if a project can successfully be created given a test title and description
   context "GET #show" do
     let!(:project) { Project.create(title: "Test title", description: "Test description") }
     it "returns a success response" do
