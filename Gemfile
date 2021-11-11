@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'mini_racer'
 
+gem 'simplecov', require:false, group: :test
+
 group :production do
   gem 'pg', '~> 0.21' # for Heroku deployment
   gem 'rails_12factor'
