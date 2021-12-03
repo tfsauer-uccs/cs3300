@@ -26,7 +26,14 @@ RSpec.describe Project, type: :model do
         expect(Project.count).to eq(3)
     end
 
-
-    
+  context "Create new Project" do
+    before(:each) do
+      user = FactoryBot.create(:user)
+      login_as(user)
+      visit new_project_path
+      within("form") do
+        fill_in "Title", with: "Test title"  
+      end  
+    end
   end
 end
