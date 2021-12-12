@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'mini_racer'
 
+gem 'bootstrap' , '~> 4.6.1'
+
+gem 'jquery-rails'
+
 gem 'simplecov', require:false, group: :test
 
 group :production do

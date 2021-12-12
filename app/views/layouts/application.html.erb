@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cs3300</title>
+    <title>UCCS Project Creation</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-    <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> |
-    <%= link_to "Login", new_user_session_path %>
-    <% end %>
   </head>
 
  
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <%= link_to current_user.email, edit_user_registration_path, class: "nav-item nav-link" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
+          <%= link_to "Project List", projects_path, class: "nav-item nav-link" %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-item nav-link" %>
+          <%= link_to "Log in", new_user_session_path, class: "nav-item nav-link" %>
+          <%= link_to "Project List", projects_path, class: "nav-item nav-link" %>
+        <% end %>
+      </ul>
+    </nav>
+
+    </nav>
     <%= yield %>
   </body>
 </html>
